@@ -7,16 +7,16 @@ public class Calculator {
 
     public static void main(String[] args) throws IOException {
         System.out.println("Enter first number:");
-        double firstNumber = reader();    //вводим первое число...
+        double firstNumber = reader();    
         System.out.println("Enter second number:");
-        double secondNumber = reader();  //вводим второе число...
+        double secondNumber = reader();
         System.out.println("Enter operation:");
-        String operation = reader.readLine(); // ввыодим операция...
-        operation(operation, firstNumber, secondNumber); // вызываем метод operation и передаем в него наши числа.
+        String operation = reader.readLine();
+        operation(operation, firstNumber, secondNumber);
     }
 
-    public static Double reader() throws IOException {  // метод ридер проверяет числа, если вводиться что либо,то выскакивает
-        double number = Double.MIN_VALUE;               // предуприждения - "number not correct!!!" до тех пока мы не введем число.
+    public static Double reader() throws IOException {
+        double number = Double.MIN_VALUE;
         boolean istrue = true;
         while (istrue) {
             try {
