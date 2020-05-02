@@ -1,3 +1,5 @@
+package Calc;
+
 import  java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,7 +9,7 @@ public class Calculator {
 
     public static void main(String[] args) throws IOException {
         System.out.println("Enter first number:");
-        double firstNumber = reader();    
+        double firstNumber = reader();
         System.out.println("Enter second number:");
         double secondNumber = reader();
         System.out.println("Enter operation:");
