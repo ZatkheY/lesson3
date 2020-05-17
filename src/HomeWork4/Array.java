@@ -3,13 +3,12 @@ package HomeWork4;
 import java.util.Arrays;
 
 class Array {
-    private int size = 0;
-    private int[] container = new int[size];
+    private int[] container = new int[0];
 
     void add(int num) { //Добавление нового элемента.
         int length = container.length;
         greatArray();
-        container[length] = num; 
+        container[length] = num;
     }
 
     private void greatArray() { // Создаем новый массив на одну ячейку больше.
@@ -39,15 +38,25 @@ class Array {
     }
 
     boolean contains(int element) {  // Проверяем есть ли нужный нам элемент в контейнере.
-        for (int i : container) {
-            return i == element;
+        for (int value : container) {
+            if (value == element) {
+                return true;
+            }
         }
         return false;
     }
 
-    void addAll(Array array) {  // Копируем с одного массива в другой.
-        container = Arrays.copyOf(array.container, array.container.length);
-    }
+    void addAll(Array array) {  // Добавляем эелемент с одного массива в другой.
+        int firstLength = container.length;
+        int secondLength = array.container.length;
+        int newLength = firstLength + secondLength;
+        int[] newContainer = new int[newLength];
+        System.arraycopy(container, 0, newContainer, 0, container.length);
+        System.arraycopy(array.container, 0, newContainer, firstLength, array.container.length);
+            container = newContainer;
+        }
+
+
 
     boolean equals(int firstElement, int secondElement) {  // Возвращает True если элементы равны.
         return container[firstElement] == container[secondElement];
@@ -61,8 +70,10 @@ class Array {
         for (int i = 0; i < container.length; i++) {
             if (container[i] == element) {
                 System.out.println(i);
+                return;
             }
         }
+        System.out.println("element not found");
     }
 
     void getSize() { // Выводим в консоль длину массива.
