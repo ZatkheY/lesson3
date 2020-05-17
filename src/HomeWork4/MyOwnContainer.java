@@ -30,7 +30,7 @@ public class MyOwnContainer {
         array1.print();
         System.out.println();
         array.getSize(); // Выводит в консоль размер контейнера.
-        array.clear(); // Удоляет все элементы в контейнере.
+        array.clear(); // Удаляет все элементы в контейнере.
     }
 }
 

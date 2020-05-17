@@ -38,7 +38,7 @@ class Array {
         return container[element];
     }
 
-    boolean contains(int element) {  // Проверйем есть ли нужный нам елемент в контйнере.
+    boolean contains(int element) {  // Проверяем есть ли нужный нам элемент в контейнере.
         for (int i : container) {
             return i == element;
         }
@@ -49,7 +49,7 @@ class Array {
         container = Arrays.copyOf(array.container, array.container.length);
     }
 
-    boolean equals(int firstElement, int secondElement) {  // Возврошает True если елементы равны.
+    boolean equals(int firstElement, int secondElement) {  // Возвращает True если элементы равны.
         return container[firstElement] == container[secondElement];
     }
 
@@ -73,7 +73,7 @@ class Array {
         Arrays.sort(container);
     }
 
-    void descendingSort() {  //Сортировка пузыркем по убыванию.
+    void descendingSort() {  //Сортировка пузырьком по убыванию.
         int temp;
         boolean sorted = false;
         while (!sorted) {
