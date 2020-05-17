@@ -9,7 +9,7 @@ class Array {
     void add(int num) { //Добавление нового элемента.
         int length = container.length;
         greatArray();
-        container[length] = num;
+        container[length] = num; 
     }
 
     private void greatArray() { // Создаем новый массив на одну ячейку больше.
