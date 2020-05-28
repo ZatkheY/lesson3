@@ -28,5 +28,6 @@ class Student {
         }
         Student student = (Student) object;
         return getSurname().equals(student.getSurname());
+
     }
 }

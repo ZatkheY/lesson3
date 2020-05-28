@@ -27,10 +27,6 @@ public class MyCollection implements Collection {
         return false;
     }
 
-    public int get(int index) {
-        return (int) collection[index];
-    }
-
     @Override
     public Iterator iterator() {
         return new Iterator() {

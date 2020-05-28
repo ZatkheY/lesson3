@@ -17,7 +17,7 @@ public class Main {
         collection.add("Hello");
         collection.add("Hello");
         collection.add("Hello");
-        collection.add("ggg");
+        collection.add("gg");
         nextCollection.add(3);
         nextCollection.add(1);
         nextCollection.add("Hello");
