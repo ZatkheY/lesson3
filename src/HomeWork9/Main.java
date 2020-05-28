@@ -1,7 +1,5 @@
 package HomeWork9;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,14 +8,9 @@ public class Main {
         collection.add("Hello");
         collection.add(3);
         collection.add(1);
-
-        collection.add("Hello");
-        collection.add("Hello");
-        collection.add("Hello");
-        collection.add("Hello");
-        collection.add("Hello");
         collection.add("Hello");
         collection.add("gg");
+
         nextCollection.add(3);
         nextCollection.add(1);
         nextCollection.add("Hello");
@@ -26,14 +19,6 @@ public class Main {
         System.out.println(collection.remove(new Student("Putin")));
         System.out.println(collection.size());
         collection.printList();
-
-
-
-
-
-
-
-
 
 
     }
