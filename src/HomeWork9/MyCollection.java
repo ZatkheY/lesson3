@@ -189,16 +189,12 @@ public class MyCollection implements Collection {
 
     @Override
     public Object[] toArray(Object[] objects) {
-        if (objects.length < collection.length) {
+        if (objects.length > collection.length) {
             Object[] newObject = new Object[collection.length];
-            for (int i = 0; i < newObject.length; i++) {
-                newObject[i] = collection[i];
-            }
+            System.arraycopy(collection, 0, newObject, 0, newObject.length);
             return newObject;
         } else {
-            for (int i = 0; i < collection.length; i++) {
-                objects[i] = collection[i];
-            }
+            System.arraycopy(collection, 0, objects, 0, collection.length);
             return objects;
         }
     }
