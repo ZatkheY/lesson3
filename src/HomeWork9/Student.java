@@ -1,6 +1,6 @@
-package HomeWork7;
+package HomeWork9;
 
- class Student {
+class Student {
     private String surname;
 
     public Student(String surname) {
@@ -30,4 +30,3 @@ package HomeWork7;
         return getSurname().equals(student.getSurname());
     }
 }
-

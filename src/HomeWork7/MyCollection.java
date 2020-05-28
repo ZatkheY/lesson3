@@ -1,6 +1,6 @@
 package HomeWork7;
 
-public class MyCollection {
+ class MyCollection {
     private Object[] collection = new Object[0];
     private int size = 0;
 
@@ -52,6 +52,9 @@ public class MyCollection {
 
     boolean remove(Object object) {
         for (int i = 0; i < collection.length; i++) {
+            if (collection[i] == null) {
+                continue;
+            }
             if (collection[i].equals(object)) {
                 collection[i] = null;
                 size--;
@@ -85,10 +88,10 @@ public class MyCollection {
         Object[] newObject = new Object[collection.length + newCollection.collection.length];
         int length = 1;
         int newSize = 0;
-        for (int i = 0; i < collection.length; i++) {  // 315
+        for (int i = 0; i < collection.length; i++) {
             for (int j = 0; j < newCollection.collection.length; j++) {
                 if (collection[i] == null) {
-                    break;
+                    continue;
                 }
                 if (collection[i].equals(newCollection.collection[j])) {
                     if (collection[i] != null) {
@@ -101,7 +104,7 @@ public class MyCollection {
         }
         collection = newObject;
         size = newSize;
-        return true;
+        return newSize > 0;
     }
 
     boolean removeAll(MyCollection newCollection) {
@@ -114,7 +117,7 @@ public class MyCollection {
             count = 0;
             for (int j = 0; j < newCollection.collection.length; j++) {
                 if (collection[i] == null) {
-                    break;
+                    continue;
                 }
                 if (!(collection[i].equals(newCollection.collection[j]))) {
                     count++;
@@ -128,7 +131,7 @@ public class MyCollection {
         }
         collection = newObject;
         size = newSize;
-        return true;
+        return newSize > 0;
     }
 
     boolean containsAll(MyCollection newCollection) {
