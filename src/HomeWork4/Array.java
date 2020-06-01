@@ -9,6 +9,7 @@ class Array {
         int length = container.length;
         greatArray();
         container[length] = num;
+        ascendingSort(container);
     }
 
     private void greatArray() { // Создаем новый массив на одну ячейку больше.
@@ -24,9 +25,14 @@ class Array {
     }
 
     void print() {  // Выводим в консоль.
-        for (int value : container) {
-            System.out.print(value + " ");
+        String str = "";
+        for (int i = 0; i < container.length; i++) {
+                str += container[i] + ", ";
         }
+        if (!str.isEmpty()) {
+            str = str.substring(0, str.length() - 2);
+        }
+        System.out.println("[" + str + "]");
     }
 
     void arrayToString() {
@@ -38,12 +44,8 @@ class Array {
     }
 
     boolean contains(int element) {  // Проверяем есть ли нужный нам элемент в контейнере.
-        for (int value : container) {
-            if (value == element) {
-                return true;
-            }
-        }
-        return false;
+      int result = binarySearch(container,element);
+      return result >= 0;
     }
 
     void addAll(Array array) {  // Добавляем эелемент с одного массива в другой.
@@ -53,9 +55,8 @@ class Array {
         int[] newContainer = new int[newLength];
         System.arraycopy(container, 0, newContainer, 0, container.length);
         System.arraycopy(array.container, 0, newContainer, firstLength, array.container.length);
-            container = newContainer;
-        }
-
+        container = newContainer;
+    }
 
 
     boolean equals(int firstElement, int secondElement) {  // Возвращает True если элементы равны.
@@ -80,7 +81,7 @@ class Array {
         System.out.println(container.length);
     }
 
-    void ascendingSort() {  //Сортировка по возрастанию.
+    private void ascendingSort(int[] container) {  //Сортировка по возрастанию.
         Arrays.sort(container);
     }
 
@@ -96,9 +97,24 @@ class Array {
                     container[i + 1] = temp;
                     sorted = false;
                 }
-
             }
         }
+    }
+
+    private int binarySearch(int[] container, int element) {
+        int firstNumber = 0;
+        int lastNumber = container.length - 1;
+        while (firstNumber <= lastNumber) {
+            int middleIndex = (firstNumber + lastNumber) / 2;
+            if (container[middleIndex] == element) {
+                return middleIndex;
+            }if (container[middleIndex] < element) {
+                firstNumber = middleIndex + 1;
+            } else if (container[middleIndex] > element) {
+                lastNumber = middleIndex - 1;
+            }
+        }
+        return -1;
     }
 }
 
