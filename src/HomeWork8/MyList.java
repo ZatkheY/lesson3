@@ -32,11 +32,6 @@ class MyList implements Collection {
             return true;
         }
         List list = first;
-        if (size == 1) {
-            list.next = newList;
-            size++;
-            return true;
-        }
         int count = 0;
         while (list != null) {
             if (count == size - 1) {
