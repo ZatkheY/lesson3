@@ -30,14 +30,18 @@ public class MyCollection implements Collection {
     @Override
     public Iterator iterator() {
         return new Iterator() {
+            private int index = 0;
+
             @Override
             public boolean hasNext() {
-                return false;
+                return index < collection.length;
             }
 
             @Override
             public Object next() {
-                return null;
+                Object o = collection[index];
+                index++;
+                return o;
             }
         };
     }
@@ -45,7 +49,7 @@ public class MyCollection implements Collection {
     @Override
     public boolean add(Object object) {
         if (size == collection.length) {
-            Object[] newObject = new Object[collection.length + 10];
+            Object[] newObject = new Object[collection.length + 1];
             System.arraycopy(collection, 0, newObject, 0, collection.length);
             collection = newObject;
         }
@@ -56,9 +60,9 @@ public class MyCollection implements Collection {
 
     void printList() {
         String str = "";
-        for (int i = 0; i < collection.length; i++) {
-            if (collection[i] != null) {
-                str += collection[i] + ", ";
+        for (Object object : collection) {
+            if (object != null) {
+                str += object + ", ";
             }
         }
         if (!str.isEmpty()) {

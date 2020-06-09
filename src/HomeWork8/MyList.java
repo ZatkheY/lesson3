@@ -153,14 +153,24 @@ class MyList implements Collection {
     @Override
     public Iterator iterator() {
         return new Iterator() {
+            private int index = 0;
+
             @Override
             public boolean hasNext() {
-                return false;
+                return index < size;
             }
 
             @Override
             public Object next() {
-                return null;
+                List list = first;
+                for (int i = 0; i < size; i++) {
+                    if (i == index) {
+                        index++;
+                        return list.data;
+                    }
+                    list = list.next;
+                }
+                return first;
             }
         };
     }
@@ -209,7 +219,7 @@ class MyList implements Collection {
         return "[" + result + "]";
     }
 
-    private class List {
+    private static class List {
         Object data;
         List next;
 
