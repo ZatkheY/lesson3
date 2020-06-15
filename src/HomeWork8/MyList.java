@@ -153,24 +153,18 @@ class MyList implements Collection {
     @Override
     public Iterator iterator() {
         return new Iterator() {
-            private int index = 0;
+            List list = first;
 
             @Override
             public boolean hasNext() {
-                return index < size;
+                return list != null;
             }
 
             @Override
             public Object next() {
-                List list = first;
-                for (int i = 0; i < size; i++) {
-                    if (i == index) {
-                        index++;
-                        return list.data;
-                    }
-                    list = list.next;
-                }
-                return first;
+                List result = list;
+                list = list.next;
+                return result.data;
             }
         };
     }
