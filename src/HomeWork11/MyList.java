@@ -236,12 +236,6 @@ public class MyList implements List {
         return list.toArray();
     }
 
-//    @Override
-//    public int compare(Object o1, Object o2) {
-//        Integer first= (Integer)o1;
-//        Integer second = (Integer)o2;
-//        return Integer.compare(first,second);
-//    }
 
     private class MyOwnListIterator implements ListIterator {
         private int index;
