@@ -125,7 +125,7 @@ public class MyOwnTreeSetTest {
         myOwnTreeSet1.add(7);
         myOwnTreeSet1.add(9);
         Assert.assertTrue(myOwnTreeSet.retainAll(myOwnTreeSet1));
-        Assert.assertEquals(2,myOwnTreeSet.size());
+        Assert.assertEquals(2, myOwnTreeSet.size());
     }
 
     @Test
@@ -141,7 +141,7 @@ public class MyOwnTreeSetTest {
         myOwnTreeSet1.add(10);
         myOwnTreeSet1.add(11);
         Assert.assertTrue(myOwnTreeSet.removeAll(myOwnTreeSet1));
-        Assert.assertEquals(1,myOwnTreeSet.size());
+        Assert.assertEquals(1, myOwnTreeSet.size());
     }
 
     @Test
@@ -156,7 +156,7 @@ public class MyOwnTreeSetTest {
         myOwnTreeSet1.add(9);
         myOwnTreeSet1.add(90);
         myOwnTreeSet1.add(3);
-       Assert.assertTrue(myOwnTreeSet.containsAll(myOwnTreeSet1));
+        Assert.assertTrue(myOwnTreeSet.containsAll(myOwnTreeSet1));
 //       Assert.assertFalse(myOwnTreeSet.containsAll(myOwnTreeSet1));
     }
 }

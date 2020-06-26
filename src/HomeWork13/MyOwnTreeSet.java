@@ -185,14 +185,14 @@ public class MyOwnTreeSet implements Collection {
 
     @Override
     public Object[] toArray(Object[] array) {
-        if(array.length > size()){
+        if (array.length > size()) {
             Collections.sort(hash);
-            Object[]newObject = new Object[array.length];
+            Object[] newObject = new Object[array.length];
             for (int i = 0; i < hash.size(); i++) {
                 newObject[i] = hash.get(i);
             }
             return newObject;
-        }else {
+        } else {
             Collections.sort(hash);
             for (int i = 0; i < hash.size(); i++) {
                 array[i] = hash.get(i);
