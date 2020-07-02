@@ -21,8 +21,12 @@ public class MyMap implements Map {
     public boolean containsKey(Object key) {
         Entry entry = data[searchIndex(key)];
         while (entry != null) {
-            if (entry.key.equals(key)) {
-                return true;
+            try {
+                if (entry.key.equals(key)) {
+                    return true;
+                }
+            } catch (NullPointerException e) {
+
             }
             entry = entry.next;
         }
@@ -33,8 +37,12 @@ public class MyMap implements Map {
     public boolean containsValue(Object value) {
         for (Entry entry : data) {
             while (entry != null) {
-                if (entry.value.equals(value)) {
-                    return true;
+                try {
+                    if (entry.value.equals(value)) {
+                        return true;
+                    }
+                } catch (NullPointerException e) {
+                    System.err.println("Please print not null");
                 }
                 entry = entry.next;
             }
@@ -84,18 +92,11 @@ public class MyMap implements Map {
 
     @Override
     public void putAll(Map map) {
-        int thisMapSize = size;
-        int othMapSize = map.size();
-        Set set = map.keySet();
-        Collection collection = map.values();
-        for (Object key : set) {
-            for (Object value : collection) {
-                put(key, value);
-            }
+        for (Object o : map.entrySet()) {
+            Map.Entry entry = (Map.Entry) o;
+            put(entry.getKey(), entry.getValue());
         }
-        size = thisMapSize + othMapSize;
     }
-
 
     @Override
     public void clear() {
@@ -152,6 +153,7 @@ public class MyMap implements Map {
     }
 
     private int searchIndex(Object key) {
+
         int result = key.hashCode();
         int positiveResult = Math.abs(result);
         return positiveResult % data.length;
