@@ -42,7 +42,7 @@ public class MyMap implements Map {
                         return true;
                     }
                 } catch (NullPointerException e) {
-                    System.err.println("Please print not null");
+                    e.printStackTrace();
                 }
                 entry = entry.next;
             }
