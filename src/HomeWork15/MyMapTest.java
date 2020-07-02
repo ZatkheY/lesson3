@@ -51,7 +51,7 @@ public class MyMapTest {
 
     @Test
     public void containsValue() {
-        map.put(1, "Bill");
+        map.put(1, "Bil");
         map.put(2, "Tramp");
         map.put(3, "Bush");
         Assert.assertFalse(map.containsValue("Hillel"));

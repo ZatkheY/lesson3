@@ -21,12 +21,8 @@ public class MyMap implements Map {
     public boolean containsKey(Object key) {
         Entry entry = data[searchIndex(key)];
         while (entry != null) {
-            try {
-                if (entry.key.equals(key)) {
-                    return true;
-                }
-            } catch (NullPointerException e) {
-
+            if (entry.key.equals(key)) {
+                return true;
             }
             entry = entry.next;
         }
@@ -37,12 +33,8 @@ public class MyMap implements Map {
     public boolean containsValue(Object value) {
         for (Entry entry : data) {
             while (entry != null) {
-                try {
-                    if (entry.value.equals(value)) {
-                        return true;
-                    }
-                } catch (NullPointerException e) {
-                    e.printStackTrace();
+                if (entry.value.equals(value)) {
+                    return true;
                 }
                 entry = entry.next;
             }
