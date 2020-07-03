@@ -21,8 +21,12 @@ public class MyMap implements Map {
     public boolean containsKey(Object key) {
         Entry entry = data[searchIndex(key)];
         while (entry != null) {
-            if (entry.key.equals(key)) {
-                return true;
+            try {
+                if (entry.key.equals(key)) {
+                    return true;
+                }
+            }catch (NullPointerException e){
+                e.printStackTrace();
             }
             entry = entry.next;
         }
@@ -33,9 +37,14 @@ public class MyMap implements Map {
     public boolean containsValue(Object value) {
         for (Entry entry : data) {
             while (entry != null) {
-                if (entry.value.equals(value)) {
-                    return true;
+                try {
+                    if (entry.value.equals(value)) {
+                        return true;
+                    }
+                }catch (NullPointerException e){
+                    e.printStackTrace();
                 }
+
                 entry = entry.next;
             }
         }
@@ -46,8 +55,12 @@ public class MyMap implements Map {
     public Object get(Object key) {
         Entry entry = data[searchIndex(key)];
         while (entry.key != null) {
-            if (entry.key.equals(key)) {
-                return entry.value;
+            try {
+                if (entry.key.equals(key)) {
+                    return entry.value;
+                }
+            }catch (NullPointerException e){
+                e.printStackTrace();
             }
             entry = entry.next;
         }
@@ -72,10 +85,14 @@ public class MyMap implements Map {
     public Object remove(Object key) {
         Entry entry = data[searchIndex(key)];
         while (entry != null) {
-            if (entry.key.equals(key)) {
-                data[searchIndex(key)] = null;
-                size--;
-                return entry.value;
+            try {
+                if (entry.key.equals(key)) {
+                    data[searchIndex(key)] = null;
+                    size--;
+                    return entry.value;
+                }
+            }catch (NullPointerException e){
+                e.printStackTrace();
             }
             entry = entry.next;
         }
@@ -84,10 +101,15 @@ public class MyMap implements Map {
 
     @Override
     public void putAll(Map map) {
-        for (Object o : map.entrySet()) {
-            Map.Entry entry = (Map.Entry) o;
-            put(entry.getKey(), entry.getValue());
+        try {
+            for (Object o : map.entrySet()) {
+                Map.Entry entry = (Map.Entry) o;
+                put(entry.getKey(), entry.getValue());
+            }
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
+
     }
 
     @Override
@@ -145,10 +167,15 @@ public class MyMap implements Map {
     }
 
     private int searchIndex(Object key) {
-
-        int result = key.hashCode();
-        int positiveResult = Math.abs(result);
-        return positiveResult % data.length;
+        int finalResult = 0;
+        try {
+            int result = key.hashCode();
+            int positiveResult = Math.abs(result);
+            finalResult = positiveResult % data.length;
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return finalResult;
     }
 
     private static class Entry implements Map.Entry {
