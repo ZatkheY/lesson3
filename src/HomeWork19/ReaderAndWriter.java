@@ -32,7 +32,7 @@ class ReaderAndWriter {
 
     void writeStudents(List student) {
         try {
-            OutputStream outputStream = new FileOutputStream(new File("jsonFormat.json"));
+            OutputStream outputStream = new FileOutputStream("jsonFormat.json",true);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
             String json = GSON.toJson(student);
             objectOutputStream.writeObject(json);
