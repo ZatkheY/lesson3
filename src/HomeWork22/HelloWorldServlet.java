@@ -11,7 +11,7 @@ public class HelloWorldServlet extends HttpServlet {
     @Override
     public void service(ServletRequest request, ServletResponse response) throws IOException {
         try (PrintWriter writer = response.getWriter()) {
-            writer.println("<h1>Hello World</h1>");
+            writer.println("<h1>Hello World</h1>"); 
         }
     }
 }
