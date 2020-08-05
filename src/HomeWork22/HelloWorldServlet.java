@@ -16,7 +16,7 @@ public class HelloWorldServlet extends HttpServlet {
                 "</head>" +
                 "<body>" +
                 "<center>" +
-                "<h1>"+
+                "<h1>" +
                 "<form action='HelloWorldServlet' method= 'POST'>" +
                 "number " +
                 "<input type='text' name= 'number'/>" +
@@ -25,7 +25,7 @@ public class HelloWorldServlet extends HttpServlet {
                 "<button>" + "START" + "</button>" +
                 "</form>" +
                 "</h1>" +
-                "</center>"+
+                "</center>" +
                 "</body>" +
                 "</html>"
         );
@@ -40,15 +40,14 @@ public class HelloWorldServlet extends HttpServlet {
                 "<head></head>" +
                 "<body>" +
                 "<center>" +
-                "<h1>"+
+                "<h1>" +
                 "Result = " + result +
                 "<form action='HelloWorldServlet' method= 'GET'>" +
                 "<button>" + "Back" + "</button>" +
                 "</h1>" +
-                "</center>"+
+                "</center>" +
                 "</body>" +
                 "</html>"
-
         );
     }
 
