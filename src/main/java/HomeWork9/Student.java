@@ -1,6 +1,8 @@
 package HomeWork9;
 
-class Student {
+import java.util.Comparator;
+
+public class Student   {
     private String surname;
 
     public Student(String surname) {
@@ -29,4 +31,5 @@ class Student {
         Student student = (Student) object;
         return getSurname().equals(student.getSurname());
     }
+
 }

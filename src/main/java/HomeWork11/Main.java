@@ -19,7 +19,7 @@ public class Main {
         list1.add(3);
         list1.add(7);
         System.out.println(list1 + " Размер = " + list1.size());
-        Collections.sort(list);
+        System.out.println(list.removeAll(list1));
 
         System.out.println(list + " Размер = " + list.size());
     }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Action {
+ class Action {
 
     public static void print(ArrayList<Student> students) {
         int id = 1;
@@ -23,7 +23,7 @@ public class Action {
         }
     }
 
-    public static void mark(ArrayList<Student> students, int[] marks, BufferedReader reader) throws IOException {
+     static void mark(ArrayList<Student> students, int[] marks, BufferedReader reader) throws IOException {
         System.out.println("Введите фамилию:");
         boolean check = true;
         String studentSurname = reader.readLine();
@@ -44,7 +44,7 @@ public class Action {
         }
     }
 
-    public static void removeStudents(ArrayList<Student> students, BufferedReader reader) throws IOException {
+     static void removeStudents(ArrayList<Student> students, BufferedReader reader) throws IOException {
         System.out.println("Введите фамилию студента которого хотите удалить :");
         boolean check = true;
         String studentSurname = reader.readLine();
@@ -64,7 +64,7 @@ public class Action {
 
     }
 
-    public static void containsStudent(ArrayList<Student> students, BufferedReader reader) throws IOException {
+     static void containsStudent(ArrayList<Student> students, BufferedReader reader) throws IOException {
         System.out.println("Введите фамилию студента:");
         boolean check = true;
         String studentSurname = reader.readLine();
@@ -83,14 +83,14 @@ public class Action {
         }
     }
 
-    public static void addStudents(ArrayList<Student> students, BufferedReader reader) throws IOException {
+     static void addStudents(ArrayList<Student> students, BufferedReader reader) throws IOException {
         System.out.println("Введите фамилию:");
         students.add(new Student(reader.readLine(), new int[32]));
         System.out.println("Студент добавлен!");
         System.out.println("Введите новую команду:");
     }
 
-    public static void clearAllStudents(ArrayList<Student> students, BufferedReader reader) throws IOException {
+     static void clearAllStudents(ArrayList<Student> students, BufferedReader reader) throws IOException {
         System.out.println("Вы уверены ?\nyes = Удалить весь список!!!\nno = отменить удаление!!!");
         String choose = reader.readLine();
         if (choose.contains("yes")) {
@@ -104,14 +104,14 @@ public class Action {
 
     }
 
-    public static void sortStudentsSurnames(ArrayList<Student> students) {
+     static void sortStudentsSurnames(ArrayList<Student> students) {
         students.sort(new SortStudents());
         System.out.println("Список отсортирован по алфавиту!");
         System.out.println("Введите новую команду:");
 
     }
 
-    public static class SortStudents implements Comparator<Student> {
+     static class SortStudents implements Comparator<Student> {
         @Override
         public int compare(Student a, Student b) {
             return a.surname.compareTo(b.surname);

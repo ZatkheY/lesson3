@@ -26,7 +26,7 @@ public class Main {
                 System.out.print("[" + firstIndex + "]" + " " + "[" + lastIndex + "]");
                 return;
             } else {
-                if (sum < number) { 
+                if (sum < number) {
                     firstIndex++;
                 } else {
                     lastIndex--;

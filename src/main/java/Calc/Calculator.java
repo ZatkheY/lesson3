@@ -31,7 +31,7 @@ public class Calculator {
         return number;
     }
 
-    public static void operation(String operation, double firstNumber, double secondNumber) {
+    private static void operation(String operation, double firstNumber, double secondNumber) {
         double result = 0;
         switch (operation) {
             case "+":

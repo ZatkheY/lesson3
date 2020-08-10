@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class Reader {
+ class Reader {
 
-    public static void reader(ArrayList<Student> students, int[] marks) throws IOException {
+     static void reader(ArrayList<Student> students, int[] marks) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean isTrue = true;

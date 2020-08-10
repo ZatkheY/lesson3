@@ -1,14 +1,14 @@
 package StudentsJournal;
 
-public class Student {
+ class Student {
     String surname;
     int[] marks;
     int point;
 
-    public Student() {
+     Student() {
     }
 
-    public Student(String surname, int[] marks) {
+     Student(String surname, int[] marks) {
         this.surname = surname;
         this.marks = marks;
     }

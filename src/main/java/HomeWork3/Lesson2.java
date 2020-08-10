@@ -23,7 +23,7 @@ public class Lesson2 {
         check(xLeft,yLeft,xRight,yRight,x,y);
     }
 
-    public static void check(int xLeft, int yLeft, int xRight, int yRight, int x, int y) {
+     static void check(int xLeft, int yLeft, int xRight, int yRight, int x, int y) {
         if (x >= xLeft && x <= xRight || x <= xLeft && x >= xRight || y >= yLeft && y <= yRight || y <= yLeft && y >= yRight) {
             System.out.println("point belongs!!!");
         } else {
