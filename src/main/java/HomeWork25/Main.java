@@ -15,16 +15,20 @@ public class Main {
                 new Student("Ян = 1 гл.буквы", "Варвачук".toUpperCase()),
                 new Student("Доналд = 2 гл.буквы", "Трамп".toUpperCase()),
                 new Student("Алексей 3 гл.буквы", "Брин".toUpperCase()));
+
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
+
         if (str.equalsIgnoreCase("1")) {
             stream.sorted().forEach(student ->
                     System.out.println(student.getLastName() + " " + student.getName()));
             System.out.println("Сортировка Фамилий по алфавиту ");
+          
         } else if (str.equalsIgnoreCase("2")) {
             stream.sorted(new Student.StudentsNameComparator()).forEach(student ->
                     System.out.println(student.getLastName() + " " + student.getName()));
             System.out.println("Сортировка по длине имени");
+
         } else if (str.equalsIgnoreCase("3")) {
             List<Character> list = Arrays.asList('а', 'о', 'и', 'е', 'ю', 'я', 'у');
             Function<Student, Integer> wordCount = student -> {
