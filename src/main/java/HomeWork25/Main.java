@@ -23,7 +23,7 @@ public class Main {
             stream.sorted().forEach(student ->
                     System.out.println(student.getLastName() + " " + student.getName()));
             System.out.println("Сортировка Фамилий по алфавиту ");
-          
+
         } else if (str.equalsIgnoreCase("2")) {
             stream.sorted(new Student.StudentsNameComparator()).forEach(student ->
                     System.out.println(student.getLastName() + " " + student.getName()));

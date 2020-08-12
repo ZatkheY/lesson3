@@ -29,7 +29,7 @@ public class Student implements Comparable<Student> {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                '}';
+                '}';  
     }
 
     public static class StudentsNameComparator implements Comparator<Student> {
